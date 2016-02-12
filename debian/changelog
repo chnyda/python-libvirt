@@ -1,0 +1,189 @@
+libvirt-python (1.3.1-1ubuntu1) xenial; urgency=low
+
+  * New upstream release. Remaining changes:
+    - Suggest libvirt-bin if libvirt-daemon doesn't exist.
+
+ -- Chris J Arges <chris.j.arges@canonical.com>  Fri, 12 Feb 2016 12:35:59 -0600
+
+libvirt-python (1.3.1-1) unstable; urgency=medium
+
+  * [ad19993] Add README.source from gbp example
+  * [9b75cb5] New upstream version 1.3.1
+
+ -- Guido Günther <agx@sigxcpu.org>  Thu, 04 Feb 2016 16:57:03 +0100
+
+libvirt-python (1.3.0-1) unstable; urgency=medium
+
+  * [f61a0ec] New upstream version 1.3.0
+  * [8d05a00] Use libvirt-daemon instead of libvirt-bin
+    (Closes: #809411)
+  * [c9240be] Remove duplicate sections. Thanks lintian!
+  * [191dd26] Use canonical VCS field. Thanks lintian!
+  * [80dc136] Bump standards version
+  * [08cb1fa] Use upstream shipped tests as autopkg smoketest
+
+ -- Guido Günther <agx@sigxcpu.org>  Wed, 30 Dec 2015 15:09:33 +0100
+
+libvirt-python (1.2.18-1) unstable; urgency=medium
+
+  * [c5ff0ce] New upstream version 1.2.18
+  * [0df5ce5] Drop patches all applied upstream
+
+ -- Guido Günther <agx@sigxcpu.org>  Fri, 14 Aug 2015 22:44:07 +0200
+
+libvirt-python (1.2.15-1ubuntu1) xenial; urgency=low
+
+  * New upstream release.
+
+ -- Chris J Arges <chris.j.arges@canonical.com>  Mon, 30 Nov 2015 16:33:03 -0600
+
+libvirt-python (1.2.15-1) unstable; urgency=medium
+
+  * [42694b7] Adjust gbp.conf for experimental
+  * [a7a5386] New upstream version 1.2.12
+  * [984d13c] Require libvirt 1.2.12 to get all features enabled
+  * [c7637c1] New upstream version 1.2.15
+  * [36857e9] Require libvirt 1.2.15
+  * [f00217a] Make build reproducible.  Thanks to Chris Lamb for the patch
+    (Closes: #779679)
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 18 May 2015 23:42:21 +0200
+
+libvirt-python (1.2.15-0ubuntu1) wily; urgency=medium
+
+  * New upstream release. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 07 May 2015 11:39:33 -0400
+
+libvirt-python (1.2.12-0ubuntu1) vivid; urgency=medium
+
+  * New uptream release.
+  * debian/patches/libvirt-memleak.patch: Dropped no longer needed.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Wed, 04 Feb 2015 11:05:55 -0500
+
+libvirt-python (1.2.9-1) unstable; urgency=medium
+
+  * [e36b886] New upstream version 1.2.9 (Closes: #765159, #765108)
+  * [ac669e2] Build depend on libvirt 1.2.9 for the new bindings
+
+ -- Guido Günther <agx@sigxcpu.org>  Tue, 14 Oct 2014 14:22:53 +0200
+
+libvirt-python (1.2.8-1) unstable; urgency=medium
+
+  * [e081979] New upstream version 1.2.8
+  * [ad88fbf] Require libvirt 1.2.8 for the new bindings
+
+ -- Guido Günther <agx@sigxcpu.org>  Fri, 26 Sep 2014 19:19:57 +0200
+
+libvirt-python (1.2.8-0ubuntu2) utopic; urgency=medium
+
+  * debian/patches/libvirt-memleak.patch: Fix memory leak.
+    (LP: #1365250) 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 19 Sep 2014 08:51:50 -0400
+
+libvirt-python (1.2.8-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+
+ -- Serge Hallyn <serge.hallyn@ubuntu.com>  Tue, 09 Sep 2014 10:56:03 -0500
+
+libvirt-python (1.2.6-2) unstable; urgency=medium
+
+  * Upload to unstable
+  * [6c8e688] Recommend libvirt-daemon instead of libvirt-bin. Sufficient for
+    many workloads.
+  * [ab417b9] Rebuild against newer libvirt
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 11 Aug 2014 00:13:53 +0200
+
+libvirt-python (1.2.6-1) experimental; urgency=medium
+
+  * [8c67fb3] Fix Vcs-Git URL (Closes: #755758)
+  * [e5263b5] New upstream version 1.2.6 (Closes: #754648)
+
+ -- Guido Günther <agx@sigxcpu.org>  Thu, 24 Jul 2014 08:40:34 +0200
+
+libvirt-python (1.2.6-0ubuntu1) utopic; urgency=medium
+
+  * New usptream release. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 15 Aug 2014 13:24:48 -0400
+
+libvirt-python (1.2.5-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release.
+  * debian/control: Add python-nose as a build-dependency.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Wed, 18 Jun 2014 20:19:50 -0400
+
+libvirt-python (1.2.4-1) unstable; urgency=medium
+
+  * [5d4293a] Indicate that we break older virtinst
+    by the virStream changes in d43cb4c80a1986a2aa275a80b11685b13b58bfe5.
+    leading to errors like:
+        ERROR    'virStream' object has no attribute 'upload'
+  * [611d8de] New upstream version 1.2.4
+    (Closes: #750323, #753675, #605965)
+  * [498ac54] Drop patches, all fixed upstream
+  * [a319328] Add python3 support
+  * [42e49b0] Depend on newer libvirt for the API XML files
+  * [b0aa3c9] Update gbp.conf for sid builds
+
+ -- Guido Günther <agx@sigxcpu.org>  Thu, 10 Jul 2014 08:38:03 +0200
+
+libvirt-python (1.2.2-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release.
+  * debian/patches/virStream-send-regression: Dropped no longer needed.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Tue, 04 Mar 2014 13:22:21 -0500
+
+libvirt-python (1.2.1-2) unstable; urgency=medium
+
+  * [007e79c] Add watch file
+  * [d43cb4c] Fix calling of virStreamSend method. Cherry-picked upstream
+    commit ea9339c878ffc344a3ef0cc659b7bce87125678f
+
+ -- Guido Günther <agx@sigxcpu.org>  Wed, 05 Feb 2014 22:30:32 +0100
+
+libvirt-python (1.2.1-1) unstable; urgency=medium
+
+  * [2de72d5] New upstream version 1.2.1
+  * [de2e87e] Build against newer libvirt
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 19 Jan 2014 13:45:35 +0100
+
+libvirt-python (1.2.1-0ubuntu2) trusty; urgency=medium
+
+  * d/p/virStream-send-regression: fix regression in send function
+    (LP: #1270588).
+
+ -- Robie Basak <robie.basak@ubuntu.com>  Thu, 23 Jan 2014 13:05:33 +0000
+
+libvirt-python (1.2.1-0ubuntu1) trusty; urgency=medium
+
+  *  New upstream release.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 16 Jan 2014 09:45:35 -0500
+
+libvirt-python (1.2.0-2ubuntu1) trusty; urgency=medium
+
+  * debian/rules: Run testsuite druing build.
+  * debian/control: Add python-lxml as a build-dependency. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 02 Jan 2014 13:32:00 -0500
+
+libvirt-python (1.2.0-2) unstable; urgency=medium
+
+  * Upload to unstable 
+
+ -- Guido Günther <agx@sigxcpu.org>  Fri, 20 Dec 2013 08:04:18 +0100
+
+libvirt-python (1.2.0-1) experimental; urgency=low
+
+  * Initial release (Closes: #731088)
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 02 Dec 2013 08:35:03 +0100
+

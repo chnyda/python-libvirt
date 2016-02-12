@@ -1,0 +1,10 @@
+Tests: smoke
+Depends: python-libvirt,
+ python-nose
+Restrictions: allow-stderr
+
+Tests: smoke3
+Depends: python3-libvirt,
+ python3-nose
+Restrictions: allow-stderr
+

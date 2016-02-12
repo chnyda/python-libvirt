@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+set -x
+
+nosetests3
+
+echo 'Smoke test of python3 version succesful'
+exit 0
