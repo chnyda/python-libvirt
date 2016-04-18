@@ -8200,6 +8200,7 @@ convertDomainStatsRecord(virDomainStatsRecordPtr *records,
     PyObject *py_retval;
     PyObject *py_record;
     PyObject *py_record_stats = NULL;
+    virDomainPtr dom = NULL;
     size_t i;
 
     if (!(py_retval = PyList_New(nrecords)))
@@ -8211,9 +8212,12 @@ convertDomainStatsRecord(virDomainStatsRecordPtr *records,
 
         VIR_PY_LIST_SET_GOTO(py_retval, i, py_record, error);
 
+        dom = records[i]->dom;
+        virDomainRef(dom);
         VIR_PY_TUPLE_SET_GOTO(py_record, 0,
-                              libvirt_virDomainPtrWrap(records[i]->dom),
+                              libvirt_virDomainPtrWrap(dom),
                               error);
+        dom = NULL;
 
         if (!(py_record_stats = getPyVirTypedParameter(records[i]->params,
                                                        records[i]->nparams)))
@@ -8225,6 +8229,8 @@ convertDomainStatsRecord(virDomainStatsRecordPtr *records,
     return py_retval;
 
  error:
+    if (dom)
+        virDomainFree(dom);
     Py_XDECREF(py_retval);
     return NULL;
 }
